@@ -1,5 +1,6 @@
+from math import *
 #Obtener promedio
-def promedio(datos):
+def media(datos):
     sumatoria = sum(datos)
     n = len(datos)
     result = sumatoria / n
@@ -7,7 +8,7 @@ def promedio(datos):
 
 #Obtener moda
 def moda(datos):
-    #Valores a tomar en cuenta
+    #Valores a tomar en cuentadatos.sort
     resultados = []
     repeticiones = 0
     #Contar los valores y obtener los mas repetidos
@@ -33,9 +34,26 @@ def mediana(datos):
         mediana = datos[int((n + 1) / 2) - 1]
     return mediana
 
+#Obtener la varianza
+def varianza(datos):
+    v_media = media(datos)
+    varianzalist = []
+    for i in datos:
+        i = pow((i - v_media), 2)
+        varianzalist.append(i)
+
+    v_varianza = sum(varianzalist) / len(varianzalist)
+    return v_varianza
+
+#Obtener la desviacion Estandar
+def desviacionEstandar(datos):
+    desviacion = sqrt(varianza(datos))
+    return desviacion
+
+
+
 # Probando el algoritmo 
 
-datos = [1,3,3,4,5,6]
-print promedio(datos)
-print moda(datos)
-print mediana(datos)
+datos = [14,15,15,15,16,17,18,19,20]
+print varianza(datos)
+print desviacionEstandar(datos)
