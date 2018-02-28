@@ -49,6 +49,16 @@ def varianza(datos):
 def desviacionEstandar(datos):
     desviacion = sqrt(varianza(datos))
     return desviacion
+    
+def fibonacci(numero):
+	if numero == 0:
+		return0
+	elif numero == 1:
+		return1
+	else:
+		return fibonacci(numero-1) + fibonacci(numero - 2)
+
+
 
 
 
